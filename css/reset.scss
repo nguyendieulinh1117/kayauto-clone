@@ -13,6 +13,12 @@ body {
 .align-center {
   align-items: center;
 }
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
 
 @media (max-width: 480px) {
   .col-xs-3 {
