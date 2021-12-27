@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha512-9BwLAVqqt6oFdXohPLuNHxhx36BVj5uGSGmizkmGkgl3uMSgNalKc/smum+GJU/TTP0jy0+ruwC3xNAk3F759A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Kayauto</title>
   </head>
   <body>
@@ -13,10 +20,18 @@
     <section class="header">
       <div class="header__menu">
         <div class="row align-center">
-          <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
-            <img src="./images/logo-white.png" alt="logo" width="100%" />
+          <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <div class="header__logo">
+              <img src="./images/logo-white.png" alt="logo" />
+            </div>
           </div>
-          <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+          <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12">
+            <div class="header__menu--icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="header__menu--overlay"></div>
             <div class="header__menu--nav">
               <div class="menu__title">
                 <h5>Menu</h5>
@@ -42,20 +57,76 @@
 
         <!-- button -->
 
-        <button class="header__banner--btn prev" onclick="prevSlider()">
+        <button class="header__banner--btn prev">
           <img src="./images/left.png" alt="" />
         </button>
-        <button class="header__banner--btn next" onclick="nextSlider()">
+        <button class="header__banner--btn next">
           <img src="./images/right.png" alt="" />
         </button>
 
         <!-- dot -->
         <div class="header__banner--dots">
-          <span onclick="currentSlider(1)"></span>
-          <span onclick="currentSlider(2)"></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </section>
+    <div class="left__menu">
+      <div class="left__menu--phone">
+        <a href="#">
+          <i class="fas fa-phone-alt"></i>
+          <div class="left__menu--phone--desc">
+            <span>Hotline:</span>
+            <b>0941080888</b>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="zalo">
+      <a href="#">
+        <img src="./images/zalo_sharelogo.png" alt="" />
+      </a>
+    </div>
+    <div class="right__menu">
+      <ul>
+        <li>
+          <a class="right__menu--icon"
+            ><img src="./images/search.png" alt=""
+          /></a>
+          <span>
+            <a>So sánh xe</a>
+          </span>
+        </li>
+        <li>
+          <a class="right__menu--icon"
+            ><img src="./images/dolar.png" alt=""
+          /></a>
+          <span> Đăng kí bán xe </span>
+        </li>
+        <li>
+          <a class="right__menu--icon"
+            ><img src="./images/settings.png" alt=""
+          /></a>
+          <span>
+            <a>Đăng kí mua xe</a>
+          </span>
+        </li>
+        <li>
+          <a class="right__menu--icon"
+            ><img src="./images/dolar.png" alt=""
+          /></a>
+          <span>
+            <a>Thủ tục trả góp</a>
+          </span>
+        </li>
+        <li>
+          <a class="right__menu--icon"><img src="./images/i.png" alt="" /></a>
+          <span>
+            <a>Đăng kí dịch vụ</a>
+          </span>
+        </li>
+      </ul>
+    </div>
     <script src="./js/slider.js"></script>
   </body>
 </html>

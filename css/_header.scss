@@ -3,8 +3,26 @@
 @import "media-queries";
 .header {
   position: relative;
+  &__logo {
+    @include tablet-plus {
+      text-align: center;
+    }
+    img {
+      width: 100%;
+      @include tablet-plus {
+        width: auto;
+      }
+      @include mobile {
+        width: 60%;
+      }
+      @include mobile-sm {
+        width: 75%;
+      }
+    }
+  }
   &__menu {
     position: absolute;
+    content: "";
     z-index: 2;
     width: 95vw;
     padding: 15px 0 0;
@@ -12,21 +30,43 @@
     left: 50%;
     transform: translateX(-50%);
     margin: auto;
+    overflow: hidden;
     @include tablet-plus {
       position: relative;
       width: 100%;
       padding: 40px 0;
-      background: $dark__color;
+      background: $black__color;
       left: 0;
       transform: unset;
+    }
+    @include tablet-sm {
+      padding: 15px 0;
+    }
+    &--overlay {
+      display: none;
+      @include tablet-plus {
+        display: block;
+      }
+      &.active {
+        position: fixed;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: 0.5s;
+        z-index: 888;
+      }
     }
     &--nav {
       display: flex;
       list-style: none;
       justify-content: flex-end;
+      transform: translateX(0);
       @include tablet-plus {
-        display: none;
         position: fixed;
+        content: "";
         z-index: 9999;
         flex-direction: column;
         background-color: $light__color;
@@ -35,6 +75,11 @@
         bottom: 0;
         left: 0;
         justify-content: flex-start;
+        transform: translateX(-100%);
+      }
+      &.show {
+        transform: translateX(0);
+        transition: all 0.5s ease-in-out;
       }
       .menu__title {
         display: none;
@@ -63,6 +108,7 @@
             color: #111;
             transform: translateY(-50%) rotate(45deg);
             position: absolute;
+            content: "";
             top: 50%;
             right: 8px;
             cursor: pointer;
@@ -72,7 +118,7 @@
       li {
         padding: 10px 10px;
         @include tablet-plus {
-          padding: 20px 0;
+          padding: 11px 0;
           margin-left: 30px;
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
@@ -90,18 +136,53 @@
           }
           @include tablet-plus {
             font-size: 15px;
-            color: $black__color;
+            color: $dark__color;
+            text-transform: unset;
           }
         }
         &.active {
           a {
             color: $orange__color;
             border-bottom: 2px solid $orange__color;
+            &:hover {
+              @include tablet-plus {
+                color: $orange__color;
+              }
+            }
             @include tablet-plus {
               color: $dark__color;
               border: none;
             }
           }
+        }
+      }
+    }
+    &--icon {
+      display: none;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      flex-direction: column;
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 30px;
+      transform: translateY(-50%);
+      padding: 5px;
+      z-index: 1;
+      @include tablet-plus {
+        display: flex;
+      }
+      @include mobile {
+        left: 15px;
+      }
+      span {
+        width: 100%;
+        height: 3px;
+        background-color: $white__color;
+
+        &:not(:last-child) {
+          margin-bottom: 6px;
         }
       }
     }
@@ -124,9 +205,13 @@
       outline: 0;
       cursor: pointer;
       position: absolute;
+      content: "";
       top: 50%;
       z-index: 1;
       transform: translateY(-50%);
+      @include tablet-plus {
+        display: none;
+      }
       &.next {
         left: 100%;
         transform: translate(-100%, -50%);
@@ -137,6 +222,7 @@
     }
     &--dots {
       position: absolute;
+      content: "";
       bottom: 15%;
       display: flex;
       left: 50%;
