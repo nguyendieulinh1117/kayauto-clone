@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <title>Kayauto</title>
+  </head>
+  <body>
+    <!-- header -->
+    <section class="header">
+      <div class="header__menu">
+        <div class="row align-center">
+          <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
+            <img src="./images/logo-white.png" alt="logo" width="100%" />
+          </div>
+          <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12">
+            <div class="header__menu--nav">
+              <div class="menu__title">
+                <h5>Menu</h5>
+                <a class="menu__close">+</a>
+              </div>
+              <li class="active"><a href="#">Trang chủ</a></li>
+              <li><a href="#">Giới thiệu</a></li>
+              <li><a href="#">Sản phẩm</a></li>
+              <li><a href="#">Dịch vụ</a></li>
+              <li><a href="#">So sánh xe</a></li>
+              <li><a href="#">Tin tức</a></li>
+              <li><a href="#">Phong thủy xe</a></li>
+              <li><a href="#">Liên hệ</a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__banner">
+        <div class="header__banner--slider">
+          <img src="./images/banner-home.jpg" alt="" />
+          <img src="./images/banner-home.jpg" alt="" />
+        </div>
+
+        <!-- button -->
+
+        <button class="header__banner--btn prev" onclick="prevSlider()">
+          <img src="./images/left.png" alt="" />
+        </button>
+        <button class="header__banner--btn next" onclick="nextSlider()">
+          <img src="./images/right.png" alt="" />
+        </button>
+
+        <!-- dot -->
+        <div class="header__banner--dots">
+          <span onclick="currentSlider(1)"></span>
+          <span onclick="currentSlider(2)"></span>
+        </div>
+      </div>
+    </section>
+    <script src="./js/slider.js"></script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+@import "colors";
+@import "animations";
+@import "media-queries";
+.header {
+  position: relative;
+  &__menu {
+    position: absolute;
+    z-index: 2;
+    width: 95vw;
+    padding: 15px 0 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    @include tablet-plus {
+      position: relative;
+      width: 100%;
+      padding: 40px 0;
+      background: $dark__color;
+      left: 0;
+      transform: unset;
+    }
+    &--nav {
+      display: flex;
+      list-style: none;
+      justify-content: flex-end;
+      @include tablet-plus {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        flex-direction: column;
+        background-color: $light__color;
+        width: 85%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        justify-content: flex-start;
+      }
+      .menu__title {
+        display: none;
+        @include tablet-plus {
+          display: flex;
+          position: relative;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 20px;
+          color: rgba(0, 0, 0, 0.5);
+          h5 {
+            font-size: 14px;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+          }
+          .menu__close {
+            padding: 0;
+            font-size: 26px;
+            width: 26px;
+            height: 26px;
+            text-align: center;
+            line-height: 22px;
+            text-decoration: none;
+            color: #111;
+            transform: translateY(-50%) rotate(45deg);
+            position: absolute;
+            top: 50%;
+            right: 8px;
+            cursor: pointer;
+          }
+        }
+      }
+      li {
+        padding: 10px 10px;
+        @include tablet-plus {
+          padding: 20px 0;
+          margin-left: 30px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        a {
+          color: $white__color;
+          font-size: 13px;
+          text-transform: uppercase;
+          text-decoration: none;
+          padding: 5px 0;
+          &:hover {
+            color: $orange__color;
+          }
+          @include desktop {
+            font-size: 11px;
+          }
+          @include tablet-plus {
+            font-size: 15px;
+            color: $black__color;
+          }
+        }
+        &.active {
+          a {
+            color: $orange__color;
+            border-bottom: 2px solid $orange__color;
+            @include tablet-plus {
+              color: $dark__color;
+              border: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    &--slider {
+      display: flex;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+    &--btn {
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      outline: 0;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      z-index: 1;
+      transform: translateY(-50%);
+      &.next {
+        left: 100%;
+        transform: translate(-100%, -50%);
+      }
+      &.prev {
+        left: 0;
+      }
+    }
+    &--dots {
+      position: absolute;
+      bottom: 15%;
+      display: flex;
+      left: 50%;
+      transform: translateX(-50%);
+      span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid $white__color;
+        margin: 5px 7px;
+        cursor: pointer;
+        &.active {
+          background-color: $white__color;
+        }
+      }
+    }
+  }
+}
+//animation
+.leftToRight {
+  animation: leftToRight 1s;
+}
+.rightToLeft {
+  animation: rightToLeft 1s;
+}
