@@ -1,3 +1,21 @@
+// scroll to top
+const btnScroll = document.querySelector(".scrollToTop");
+function showScroll() {
+  if (window.scrollY > 150) {
+    btnScroll.style.display = "block";
+    btnScroll.classList.add("visible");
+  } else {
+    btnScroll.classList.remove("visible");
+    btnScroll.style.display = "none";
+  }
+}
+window.onscroll = function () {
+  showScroll();
+};
+btnScroll.addEventListener("click", () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
 /// menu
 const btnOpen = document.querySelector(".header__menu--icon");
 const listMenu = document.querySelector(".header__menu--nav");
@@ -12,15 +30,19 @@ btnClose.addEventListener("click", () => {
   listMenu.classList.remove("show");
   overlay.classList.remove("active");
 });
-
+const container = document.querySelector(".header__banner--slider");
+const slides = document.querySelectorAll(".header__banner--slider img");
+const dots = document.querySelectorAll(".header__banner--dots span");
+const nextBtn = document.querySelector(".header__banner--btn.next");
+const prevBtn = document.querySelector(".header__banner--btn.prev");
+let counter = 0;
+let size;
+window.addEventListener("resize", () => {
+  size = slides[0].clientWidth;
+  console.log(size);
+});
 window.addEventListener("load", () => {
-  const container = document.querySelector(".header__banner--slider");
-  const slides = document.querySelectorAll(".header__banner--slider img");
-  const dots = document.querySelectorAll(".header__banner--dots span");
-  const nextBtn = document.querySelector(".header__banner--btn.next");
-  const prevBtn = document.querySelector(".header__banner--btn.prev");
-  let counter = 0;
-  let size = slides[0].clientWidth;
+  size = slides[0].clientWidth;
   console.log(size);
   container.style.transform = `translateX(${-size * counter}px)`;
   dots[counter].classList.add("active");
