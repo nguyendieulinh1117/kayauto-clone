@@ -1,0 +1,55 @@
+.product {
+  padding: 40px 0 70px;
+  @include tablet1 {
+    padding: 20px 0 40px;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 50px;
+    color: $title__color;
+    @include tablet1 {
+      margin-bottom: 40px;
+    }
+    h4 {
+      font-size: 34px;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.4;
+      @include tablet1 {
+        font-size: 22px;
+      }
+    }
+  }
+  &__list {
+    margin-bottom: 20px;
+  }
+  &__btn {
+    text-align: center;
+    button {
+      background-color: $orange__color;
+
+      padding: 10px 40px;
+
+      border-radius: 10px;
+      border: 0;
+      @include tablet1 {
+        padding: 8px 20px;
+      }
+      a {
+        font-size: 16px;
+        letter-spacing: 1.4px;
+        font-weight: 400;
+        color: $white__color;
+        font-weight: bold;
+        @include tablet1 {
+          font-size: 15px;
+        }
+      }
+      &:hover {
+        a {
+          color: $dark--gray__color;
+        }
+      }
+    }
+  }
+}
