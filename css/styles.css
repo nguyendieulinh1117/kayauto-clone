@@ -1159,6 +1159,12 @@
   }
 }
 
+@media screen and (max-width: 992px) {
+  .buy__container--title {
+    margin: 0;
+  }
+}
+
 .buy__container--title span {
   font-size: 50px;
   font-weight: bold;

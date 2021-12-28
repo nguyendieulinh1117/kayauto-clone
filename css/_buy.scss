@@ -32,6 +32,9 @@
         margin: 0;
         margin-right: 15px;
       }
+      @include tablet-plus {
+        margin: 0;
+      }
       span {
         font-size: 50px;
         font-weight: bold;
