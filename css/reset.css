@@ -131,6 +131,13 @@ a {
 }
 
 @media (min-width: 768px) {
+  .col-md-2 {
+    display: block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.67%;
+            flex: 0 0 16.67%;
+    max-width: 16.67%;
+  }
   .col-md-3 {
     display: block;
     -webkit-box-flex: 0;
@@ -176,6 +183,13 @@ a {
 }
 
 @media (min-width: 992px) {
+  .col-lg-2 {
+    display: block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.67%;
+            flex: 0 0 16.67%;
+    max-width: 16.67%;
+  }
   .col-lg-3 {
     display: block;
     -webkit-box-flex: 0;
@@ -221,6 +235,13 @@ a {
 }
 
 @media (min-width: 1200px) {
+  .col-xl-2 {
+    display: block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 16.67%;
+            flex: 0 0 16.67%;
+    max-width: 16.67%;
+  }
   .col-xl-3 {
     display: block;
     -webkit-box-flex: 0;
