@@ -223,7 +223,7 @@
     &--dots {
       position: absolute;
       content: "";
-      bottom: 15%;
+      bottom: 20%;
       display: flex;
       left: 50%;
       transform: translateX(-50%);
@@ -238,14 +238,30 @@
           background-color: $white__color;
         }
       }
+      @include desktop {
+        bottom: 17vh;
+      }
+
       @include tablet-plus {
-        bottom: 55vh;
+        bottom: 25vh;
+      }
+      @include tablet {
+        bottom: 20vh;
+      }
+      @include tablet1 {
+        bottom: 25vh;
+      }
+      @include tablet-sm {
+        bottom: 25vh;
       }
       @include mobile-plus {
-        bottom: 40vh;
+        bottom: 20vh;
+      }
+      @include mobile1 {
+        bottom: 25vh;
       }
       @include mobile {
-        bottom: 55vh;
+        bottom: 25vh;
       }
     }
   }

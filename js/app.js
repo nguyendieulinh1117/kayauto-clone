@@ -9,13 +9,29 @@ function showScroll() {
     btnScroll.style.display = "none";
   }
 }
-window.onscroll = function () {
-  showScroll();
-};
+
 btnScroll.addEventListener("click", () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+
+//load car
+const carBuy = document.querySelector(".buy__container--item--img");
+const carSell = document.querySelector(".buy__container--sell--img");
+const buySection = document.querySelector(".buy");
+let positionBuy = carBuy.getBoundingClientRect();
+let positionSell = carSell.getBoundingClientRect();
+
+// console.log(position);
+function loadCar() {
+  if (window.scrollY >= 250 && window.scrollY <= 1300) {
+    carBuy.classList.add("go");
+    carSell.classList.add("go");
+  } else {
+    carBuy.classList.remove("go");
+    carSell.classList.remove("go");
+  }
+}
 /// menu
 const btnOpen = document.querySelector(".header__menu--icon");
 const listMenu = document.querySelector(".header__menu--nav");
@@ -85,3 +101,9 @@ window.addEventListener("load", () => {
     });
   });
 });
+//scroll window
+window.onscroll = function () {
+  showScroll();
+  loadCar();
+  // console.log(window.scrollY);
+};

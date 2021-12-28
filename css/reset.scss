@@ -24,7 +24,7 @@ a {
   justify-content: space-between;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 575px) {
   .col-xs-3 {
     display: block;
     flex: 0 0 25%;
