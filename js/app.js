@@ -14,6 +14,20 @@ btnScroll.addEventListener("click", () => {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 });
+/// menu
+const btnOpen = document.querySelector(".header__menu--icon");
+const listMenu = document.querySelector(".header__menu--nav");
+const btnClose = document.querySelector(".menu__close");
+const overlay = document.querySelector(".header__menu--overlay");
+btnOpen.addEventListener("click", () => {
+  // listMenu.style.display = "flex";
+  listMenu.classList.add("show");
+  overlay.classList.add("active");
+});
+btnClose.addEventListener("click", () => {
+  listMenu.classList.remove("show");
+  overlay.classList.remove("active");
+});
 
 //load car
 const carBuy = document.querySelector(".buy__container--item--img");
@@ -32,20 +46,7 @@ function loadCar() {
     carSell.classList.remove("go");
   }
 }
-/// menu
-const btnOpen = document.querySelector(".header__menu--icon");
-const listMenu = document.querySelector(".header__menu--nav");
-const btnClose = document.querySelector(".menu__close");
-const overlay = document.querySelector(".header__menu--overlay");
-btnOpen.addEventListener("click", () => {
-  // listMenu.style.display = "flex";
-  listMenu.classList.add("show");
-  overlay.classList.add("active");
-});
-btnClose.addEventListener("click", () => {
-  listMenu.classList.remove("show");
-  overlay.classList.remove("active");
-});
+
 const container = document.querySelector(".header__banner--slider");
 const slides = document.querySelectorAll(".header__banner--slider img");
 const dots = document.querySelectorAll(".header__banner--dots span");
