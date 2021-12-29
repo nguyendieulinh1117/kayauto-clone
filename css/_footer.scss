@@ -9,7 +9,7 @@
       width: 95vw;
     }
     @include tablet-plus {
-      width: 95vw;
+      width: 90vw;
     }
     @include tablet {
       width: 90vw;
@@ -107,6 +107,12 @@
           margin: 0 5px;
           @include tablet-plus {
             margin: 0 10px;
+          }
+          @include mobile {
+            margin: 0 5px;
+          }
+          @include mobile-sm {
+            margin: 0;
           }
           a {
             display: flex;

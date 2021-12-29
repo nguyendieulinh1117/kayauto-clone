@@ -7,3 +7,34 @@
 @import "buy";
 @import "products";
 @import "footer";
+@import "gallery";
+@import "service";
+.slick-prev {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.493);
+  color: $white__color;
+  border: unset;
+
+  cursor: pointer;
+  padding: 10px 20px;
+  @include tablet-plus {
+    visibility: hidden;
+  }
+}
+.slick-next {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.493);
+  color: $white__color;
+  border: unset;
+  cursor: pointer;
+  padding: 10px 20px;
+  @include tablet-plus {
+    visibility: hidden;
+  }
+}

@@ -55,11 +55,10 @@ let counter = 0;
 let size;
 window.addEventListener("resize", () => {
   size = slides[0].clientWidth;
-  console.log(size);
 });
 window.addEventListener("load", () => {
   size = slides[0].clientWidth;
-  console.log(size);
+
   container.style.transform = `translateX(${-size * counter}px)`;
   dots[counter].classList.add("active");
   //prev
@@ -100,6 +99,74 @@ window.addEventListener("load", () => {
       e.classList.add("active");
     });
   });
+});
+const prev = `<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><img src='./images/left.png' alt=''></button>`;
+const next = `<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><img src='./images/right.png' alt=''></button>`;
+// service
+if ($(".service__main").length > 0) {
+  let count = $(".service__count");
+  let element = $(".service__main");
+  element.on("init reInit afterChange", (e, slick, current, next) => {
+    let i = current ? current : 0;
+    count.html(`0${i + 1} / 0${slick.slideCount}`);
+  });
+}
+$(".service__main").slick({
+  slidesToShow: 1,
+  arrows: true,
+  prevArrow: prev,
+  nextArrow: next,
+  autoplay: true,
+  autoplaySpeed: 1000,
+
+  infinite: true,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: {
+        arrows: false,
+        dots: true,
+      },
+    },
+  ],
+});
+//gallery
+$(".gallery .gallery__list").slick({
+  centerMode: true,
+  centerPadding: "30px",
+  slidesToShow: 3,
+  arrows: true,
+  prevArrow: prev,
+  nextArrow: next,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  responsive: [
+    {
+      breakpoint: 1200,
+      settings: {
+        arrows: true,
+        centerMode: true,
+        centerPadding: "30px",
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        dots: true,
+        centerMode: false,
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        dots: true,
+        centerMode: false,
+        slidesToShow: 1,
+      },
+    },
+  ],
 });
 //scroll window
 window.onscroll = function () {
