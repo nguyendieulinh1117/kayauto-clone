@@ -32,18 +32,29 @@ btnClose.addEventListener("click", () => {
 //load car
 const carBuy = document.querySelector(".buy__container--item--img");
 const carSell = document.querySelector(".buy__container--sell--img");
-const buySection = document.querySelector(".buy");
-let positionBuy = carBuy.getBoundingClientRect();
-let positionSell = carSell.getBoundingClientRect();
 
 // console.log(position);
 function loadCar() {
-  if (window.scrollY >= 250 && window.scrollY <= 1300) {
-    carBuy.classList.add("go");
-    carSell.classList.add("go");
-  } else {
-    carBuy.classList.remove("go");
-    carSell.classList.remove("go");
+  if (window.innerWidth >= 992) {
+    if (window.scrollY >= 250 && window.scrollY <= 1300) {
+      carBuy.classList.add("go");
+      carSell.classList.add("go");
+    } else {
+      carBuy.classList.remove("go");
+      carSell.classList.remove("go");
+    }
+  }
+  if (window.innerWidth <= 991) {
+    if (window.scrollY >= 400 && window.scrollY <= 1200) {
+      carBuy.classList.add("go");
+    } else {
+      carBuy.classList.remove("go");
+    }
+    if (window.scrollY >= 800 && window.scrollY <= 1700) {
+      carSell.classList.add("go");
+    } else {
+      carSell.classList.remove("go");
+    }
   }
 }
 

@@ -11,3 +11,26 @@ btnCloseb.addEventListener("click", () => {
   listMenub.classList.remove("show");
   overlayb.classList.remove("active");
 });
+
+const counts = document.querySelectorAll(".value");
+
+window.onscroll = function () {
+  if (counts.length > 0) {
+    if (window.scrollY > 400 && window.scrollY < 1500) {
+      counts.forEach((e) => {
+        const count = () => {
+          const value = +e.getAttribute("count");
+          const data = +e.innerText;
+          let time = value / 200;
+          if (data < value) {
+            e.innerText = Math.ceil(data + time);
+            setTimeout(count, 100);
+          } else {
+            e.innerText = value;
+          }
+        };
+        count();
+      });
+    }
+  }
+};
